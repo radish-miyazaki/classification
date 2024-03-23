@@ -54,7 +54,10 @@ defmodule Classification.MixProject do
       {:gettext, "~> 0.20"},
       {:jason, "~> 1.2"},
       {:dns_cluster, "~> 0.1.1"},
-      {:bandit, "~> 1.2"}
+      {:bandit, "~> 1.2"},
+      {:stb_image, "~> 0.6.8"},
+      {:bumblebee, "~> 0.5.3"},
+      {:exla, "~> 0.7.1"}
     ]
   end
 
