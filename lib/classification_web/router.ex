@@ -1,4 +1,5 @@
 defmodule ClassificationWeb.Router do
+  alias ClassificationWeb.PageLive
   use ClassificationWeb, :router
 
   pipeline :browser do
@@ -17,7 +18,7 @@ defmodule ClassificationWeb.Router do
   scope "/", ClassificationWeb do
     pipe_through :browser
 
-    get "/", PageController, :home
+    live "/", PageLive
   end
 
   # Other scopes may use custom stacks.
