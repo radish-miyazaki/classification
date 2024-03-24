@@ -1,5 +1,4 @@
 defmodule ClassificationWeb.Router do
-  alias ClassificationWeb.PageLive
   use ClassificationWeb, :router
 
   pipeline :browser do
