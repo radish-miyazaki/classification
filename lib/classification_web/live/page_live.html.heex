@@ -1,4 +1,15 @@
 <div class="flex h-screen">
   <div>Actions</div>
-  <div class="w-[32em] h-1/2 mx-auto p-4 border-2 rounded-lg shadow-xl"></div>
+  <div class="w-[32em] h-1/2 mx-auto p-4 border-2 rounded-lg shadow-xl">
+    <form id="upload-form" class="w-full" phx-change="upload">
+      <div phx-drop-target={@upload.image.ref} class="h-full">
+        <label>
+          <.live_file_input class="opacity-0 h-1/2" upload={@upload.image} />
+          <h1 class="-mt-6 text-center text-4xl">
+            Select or Drop file
+          </h1>
+        </label>
+      </div>
+    </form>
+  </div>
 </div>
