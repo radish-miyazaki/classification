@@ -21,7 +21,6 @@ defmodule ClassificationWeb.PageLive do
 
   @impl true
   def handle_event("upload", _params, socket) do
-    IO.puts("Upload start")
     {:noreply, socket}
   end
 
@@ -43,8 +42,6 @@ defmodule ClassificationWeb.PageLive do
   end
 
   def handle_event("clear", _params, socket) do
-    IO.puts("socket #{inspect(socket)}")
-
     {
       :noreply,
       socket
@@ -57,7 +54,6 @@ defmodule ClassificationWeb.PageLive do
 
   def handle_progress(:image, entry, socket) do
     if entry.done? do
-      IO.puts("Upload done")
       # アップロードされたファイルを読み込む
       upload_file =
         consume_uploaded_entries(socket, :image, fn %{path: path}, _entry ->
