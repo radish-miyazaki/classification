@@ -16,7 +16,12 @@ defmodule Classification.Application do
       # Start a worker by calling: Classification.Worker.start_link(arg)
       # {Classification.Worker, arg},
       # Start to serve requests, typically the last entry
-      ClassificationWeb.Endpoint
+      ClassificationWeb.Endpoint,
+      # リクエストが来たら推論を開始する、サーバを起動
+      {Nx.Serving,
+       name: Classification.Serving,
+       serving: Classification.Resnet.build_model(),
+       batch_timeout: 100}
     ]
 
     # See https://hexdocs.pm/elixir/Supervisor.html
